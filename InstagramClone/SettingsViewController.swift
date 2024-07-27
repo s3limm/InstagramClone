@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UIViewController {
 
+    var error = ErrorMiddleware()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +19,14 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func logoutButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toSigninVC", sender: nil)
+        
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "toSigninVC", sender: nil)
+        }
+        catch {
+            let alert = self.error.errorFunc(_title: "Bir sorunla karşılaşıldı", _message: "Çıkış yapılamadı lütfen tekrar deneyiniz")
+        }
+        
     }
 }

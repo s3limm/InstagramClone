@@ -48,7 +48,7 @@
                                 <rect key="frame" x="40" y="564" width="310" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="you don't have account?"/>
+                                <buttonConfiguration key="configuration" style="plain" title="you already have account?"/>
                                 <connections>
                                     <action selector="loginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fNJ-Qe-els"/>
                                     <segue destination="Wlj-nY-NtJ" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="AaE-aw-5hN"/>
@@ -77,8 +77,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram Log in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peW-PB-exG">
-                                <rect key="frame" x="103" y="103" width="184" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram Sign Up " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peW-PB-exG">
+                                <rect key="frame" x="103" y="103" width="204" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -91,10 +91,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyg-RO-ifo">
-                                <rect key="frame" x="82" y="531" width="226" height="35"/>
+                                <rect key="frame" x="90" y="531" width="210" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="you have already account?"/>
+                                <buttonConfiguration key="configuration" style="plain" title="you dont' have account?"/>
                                 <connections>
                                     <action selector="redirectToSignin:" destination="Wlj-nY-NtJ" eventType="touchUpInside" id="DxW-bS-KWp"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="redirectToSigninVC" modalPresentationStyle="fullScreen" id="RKe-jy-iEf"/>
@@ -113,6 +113,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                 <connections>
                                     <action selector="LoginButtonClicked:" destination="Wlj-nY-NtJ" eventType="touchUpInside" id="AJH-Dv-JCQ"/>
+                                    <segue destination="7eJ-Lw-uVE" kind="presentation" identifier="loginToHomeVC" modalPresentationStyle="fullScreen" id="dti-1D-GPt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,14 +137,39 @@
                     <view key="view" contentMode="scaleToFill" id="9kd-fo-r7o">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="Mvd-iE-pE0">
+                                <rect key="frame" x="16" y="108" width="358" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JJ-uN-fmz">
+                                <rect key="frame" x="16" y="564" width="358" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonClicked:" destination="hiM-SD-tR0" eventType="touchUpInside" id="4gs-mx-suW"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a comment :" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upd-0g-HQs">
+                                <rect key="frame" x="16" y="454" width="358" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uZb-31-tqK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="square.and.arrow.up" catalog="system" id="0Co-XT-Sgc"/>
+                    <connections>
+                        <outlet property="commentText" destination="upd-0g-HQs" id="djX-ZZ-Qa0"/>
+                        <outlet property="imageView" destination="Mvd-iE-pE0" id="CVl-32-yYS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5Q-4r-LII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024" y="307"/>
+            <point key="canvasLocation" x="2903.0769230769229" y="281.51658767772511"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xb3-e8-uGu">
@@ -192,7 +218,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="1d3-76-FzN">
             <objects>
-                <tabBarController id="7eJ-Lw-uVE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="7eJ-Lw-uVE" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="IE3-qo-6o0"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AaB-cR-juN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -211,11 +237,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="kH1-yg-QHR"/>
         <segue reference="IXN-bH-s2x"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="select" width="264" height="300"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
